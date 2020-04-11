@@ -1,5 +1,5 @@
 # ylhealth
 TODO: 
 
-[] Retail and Wholesale collections
-
+[x] Retail and Wholesale collections
+[] Add "sale" Retail products
