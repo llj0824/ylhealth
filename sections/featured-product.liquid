@@ -67,7 +67,8 @@
 
               <div id="{{ img_wrapper_id }}" class="product-single__image-wrapper supports-js{% unless featured_image == image %} hide{% endunless %}{% if section.settings.product_image_zoom_type == 'lightbox' %} zoom-lightbox{% endif %}" data-image-id="{{ image.id }}">
                 <div style="padding-top:{{ 1 | divided_by: image.aspect_ratio | times: 100}}%;">
-                  <img id="{{ img_id }}"
+                  <a href="{{ product.url }}?variant={{ variant.id }}">
+                  	<img id="{{ img_id }}"
                         class="product-single__image lazyload{% unless featured_image == image %} lazypreload{% endunless %}"
                         {% if featured_image == image %}src="{{ image | img_url: '300x300' }}"{% endif %}
                         data-src="{{ img_url }}"
@@ -76,6 +77,7 @@
                         data-sizes="auto"
                         {% if section.settings.product_image_zoom_type == 'zoom-in' %} data-zoom="{{ image | img_url: '1024x1024', scale: 2 }}"{% endif %}
                         alt="{{ image.alt | escape }}">
+                  </a>
                 </div>
               </div>
             {% endfor %}
